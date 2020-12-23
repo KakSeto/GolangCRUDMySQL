@@ -1,0 +1,38 @@
+{{ define "Index" }}
+  {{ template "Header" }}
+    
+
+    <div class="container">
+        <br>
+        <h2>Daftar Pegawai</h2> 
+        {{ template "Menu" }}
+        <table class="table table-striped" border="1" style="text-align:center" style="padding-top:10px" style="padding-bottom:10px">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Nama</td>
+            <td>Alamat</td>
+            <td>Jabatan</td>
+            <td>Action</td>
+       
+        </tr>
+        </thead>
+        <tbody>
+        {{ range . }}
+        <tr>
+            <td>{{ .Id }}</td>
+            <td> {{ .Nama }} </td>
+            <td>{{ .Alamat }} </td>
+            <td>{{ .Jabatan }} </td> 
+            <td><a class="btn btn-info" href="/show?id={{ .Id }}">View</a> | 
+                <a class="btn btn-dark" href="/edit?id={{ .Id }}">Edit</a> | 
+                <a class="btn btn-danger" href="/delete?id={{ .Id }}">Delete</a>
+            </td> 
+    
+        </tr>
+        {{ end }}
+        </tbody>
+        </table>
+    </div>
+  {{ template "Footer" }}
+{{ end }}

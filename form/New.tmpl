@@ -1,0 +1,32 @@
+{{ define "New" }}
+  {{ template "Header" }}
+  
+    <div class="container" >
+    
+        <h2>Halaman Input Pegawai</h2>  
+            <form method="POST" action="insert">
+
+                <div class="mb-3">
+                    <label class="form-label">Nama</label>
+                    <input type="text" class="form-control" name="nama">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Alamat</label>
+                    <input type="text" class="form-control" name="alamat">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Jabatan</label>
+                    <input type="text" class="form-control" name="jabatan">
+                </div>
+
+            
+            <button type="submit" class="btn btn-primary" value="Save user" />Submit</button>
+            </form>
+
+    </div>
+
+   
+  {{ template "Footer" }}
+{{ end }}

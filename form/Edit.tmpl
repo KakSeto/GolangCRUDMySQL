@@ -1,0 +1,32 @@
+{{ define "Edit" }}
+  {{ template "Header" }}
+      <div class="container" >
+    
+        <h2>Halaman Edit Data Pegawai</h2>  
+            <form method="POST" action="update">
+
+                <input type="hidden" name="uid" value="{{ .Id }}" />
+
+                <div class="mb-3">
+                    <label class="form-label">Nama</label>
+                    <input type="text" class="form-control" name="nama" value="{{ .Nama }}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Alamat</label>
+                    <input type="text" class="form-control" name="alamat" value="{{ .Alamat }}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Jabatan</label>
+                    <input type="text" class="form-control" name="jabatan" value="{{ .Jabatan }}">
+                </div>
+
+            
+            <button type="submit" class="btn btn-primary" value="Save user" />Submit</button>
+            </form>
+
+    </div>
+   
+  {{ template "Footer" }}
+{{ end }}

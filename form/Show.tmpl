@@ -1,0 +1,19 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+ 
+
+  <div class="container">
+      <h2> Detail Pegawai </h2>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ .Nama }}</h5>
+          <p class="card-text">Alamat : {{ .Alamat }}</p>
+          <p class="card-text">Jabatan : {{ .Jabatan }}</p>
+          <a class="btn btn-dark" href="/edit?id={{ .Id }}">Edit</a>
+          <a class="btn btn-danger" href="/delete?id={{ .Id }}">Delete</a>
+        </div>
+      </div>
+  </div>
+
+  {{ template "Footer" }}
+{{ end }}
